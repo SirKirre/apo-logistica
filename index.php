@@ -31,13 +31,9 @@ if ($pagina === 'produtos') {
 } elseif ($pagina === 'transportadores') {
     require __DIR__ . '/paginas/transportadores.php';
 } elseif ($pagina === 'frete') {
-    require __DIR__ . '/paginas/frete.php';
+    require __DIR__ . '/paginas/fretes.php';
 } elseif ($pagina === 'relatorios') {
-    if (isset($_GET['tipo'])) {
         require __DIR__ . '/paginas/relatorios.php';
-} else {
-    echo '<p>Esta área será implementada na próxima etapa.</p>';
-}
 } else {
     echo '<p>Esta área será implementada na próxima etapa.</p>';
 }
