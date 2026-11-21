@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    background: #f8f9fa;
+    color: #212529;
+}
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 232px;
+    height: 100vh;
+    padding: 28px 16px;
+    background: #212529;
+    color: white;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-lateral h1,
+.menu-lateral > p {
+    padding: 0 8px;
+}
+
+.menu-lateral .nav-link {
+    color: #dee2e6;
+    border-radius: 5px;
+}
+
+.menu-lateral .nav-link:hover {
+    background: #343a40;
+}
+
+.menu-lateral .nav-link.active {
+    background: #0d6efd;
+    color: white;
+}
+
+.aviso {
+    margin-top: auto;
+    padding-top: 40px;
+    color: #adb5bd;
+}
+
+.area-principal {
+    margin-left: 232px;
+}
+
+.barra-superior {
+    padding: 24px 40px;
+    background: white;
+    border-bottom: 1px solid #dee2e6;
+    color: #6c757d;
+}
+
+@media (max-width: 767px) {
+    .menu-lateral {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .area-principal {
+        margin-left: 0;
+    }
+}
+.logo-menu {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
