@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/config/conexao.php';
+
 $paginas = [
     'produtos' => 'Produtos',
     'enderecos' => 'Endereços',
@@ -15,6 +16,21 @@ if (!is_string($pagina) || !isset($paginas[$pagina])) {
 }
 
 $titulo = $paginas[$pagina];
+session_start();
+
+if (empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(32));
+}
+
+ob_start();
+
+if ($pagina === 'produtos') {
+    require __DIR__ . '/paginas/produtos.php';
+} else {
+    echo '<p>Esta área será implementada na próxima etapa.</p>';
+}
+
+$conteudo = ob_get_clean();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -63,13 +79,7 @@ $titulo = $paginas[$pagina];
 
         <section class="p-4 p-lg-5">
             <h2 class="h3 mb-4"><?= $titulo ?></h2>
-
-            <div class="card">
-                <div class="card-body">
-                    Área de <?= $titulo ?>.
-                    Os formulários serão implementados na próxima etapa.
-                </div>
-            </div>
+            <?= $conteudo ?>
         </section>
     </main>
 </body>
