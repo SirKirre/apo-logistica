@@ -26,6 +26,18 @@ ob_start();
 
 if ($pagina === 'produtos') {
     require __DIR__ . '/paginas/produtos.php';
+} elseif ($pagina === 'enderecos') {
+    require __DIR__ . '/paginas/enderecos.php';
+} elseif ($pagina === 'transportadores') {
+    require __DIR__ . '/paginas/transportadores.php';
+} elseif ($pagina === 'frete') {
+    require __DIR__ . '/paginas/frete.php';
+} elseif ($pagina === 'relatorios') {
+    if (isset($_GET['tipo'])) {
+        require __DIR__ . '/paginas/relatorios.php';
+} else {
+    echo '<p>Esta área será implementada na próxima etapa.</p>';
+}
 } else {
     echo '<p>Esta área será implementada na próxima etapa.</p>';
 }
