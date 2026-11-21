@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/config/conexao.php';
 $paginas = [
     'produtos' => 'Produtos',
     'enderecos' => 'Endereços',
